@@ -12,5 +12,10 @@ namespace BorisBikes
             bikes = new List<Bike>();
         }
 
+        public void Dock(Bike bike)
+        {
+            bikes.Add(bike);
+        }
+
     }
 }

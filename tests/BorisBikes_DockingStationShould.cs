@@ -18,5 +18,14 @@ namespace BorisBikes.UnitTests
             var stationSize = _station.bikes.Count;
             Assert.AreEqual(0, stationSize);
         }
+
+        [Test]
+        public void CanDockABike()
+        {
+            Bike bike = new Bike();
+            _station.Dock(bike);
+            var stationSize = _station.bikes.Count;
+            Assert.AreEqual(1, stationSize);
+        }
     }
 }
