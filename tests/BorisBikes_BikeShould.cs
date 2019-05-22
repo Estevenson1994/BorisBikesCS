@@ -8,7 +8,8 @@ namespace BorisBikes.UnitTests
     {
         private Bike _bike;
 
-        public BorisBikes_BikesShould()
+        [SetUp]
+        public void BeforeEachTest()
         {
             _bike = new Bike();
         }
@@ -18,6 +19,15 @@ namespace BorisBikes.UnitTests
         {
             var result = _bike.isWorking;
             Assert.True(result);
+        }
+
+        [Test]
+        public void ReturnsFalseIfBikeIsBroken()
+
+        {
+            _bike.Break();
+            var result = _bike.isWorking;
+            Assert.False(result);
         }
     }
 }

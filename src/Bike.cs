@@ -11,6 +11,11 @@ namespace BorisBikes
             isWorking = true;
         }
 
+        public void Break()
+        {
+            isWorking = false;
+        }
+
 
     }
 }
