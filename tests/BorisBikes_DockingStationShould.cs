@@ -4,15 +4,19 @@ namespace BorisBikes.UnitTests
 {
     public class Tests
     {
+        private DockingStation _station;
+
         [SetUp]
-        public void Setup()
+        public void BeforeEachTest()
         {
+            _station = new DockingStation();
         }
 
         [Test]
-        public void Test1()
+        public void DockingStationIsInitiallyEmpty()
         {
-            Assert.Pass();
+            var stationSize = _station.bikes.Count;
+            Assert.AreEqual(0, stationSize);
         }
     }
 }
