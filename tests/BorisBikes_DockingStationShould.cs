@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using Moq;
+
 
 namespace BorisBikes.UnitTests
 {
@@ -10,6 +12,7 @@ namespace BorisBikes.UnitTests
         public void BeforeEachTest()
         {
             _station = new DockingStation();
+
         }
 
         [Test]
@@ -22,8 +25,8 @@ namespace BorisBikes.UnitTests
         [Test]
         public void CanDockABike()
         {
-            Bike bike = new Bike();
-            _station.Dock(bike);
+            var mock = new Mock<Bike>();
+            _station.Dock(mock.Object);
             var stationSize = _station.bikes.Count;
             Assert.AreEqual(1, stationSize);
         }
