@@ -17,5 +17,10 @@ namespace BorisBikes
             bikes.Add(bike);
         }
 
+        public void Release(Bike bike)
+        {
+            bikes.Remove(bike);
+        }
+
     }
 }
